@@ -21,9 +21,9 @@ post '/' do
     Company: #{person.employment.name}
     Job Title: #{person.employment.title}
     Company Website: #{person.employment.domain}
-    Linkedin: https://linkedin.com/#{person.linkedin.handle}
-    Twitter: https://twitter.com/#{person.twitter.handle}
-    Github: https://github.com/#{person.github.handle}
+    Linkedin: linkedin.com/#{person.linkedin.handle}
+    Twitter: twitter.com/#{person.twitter.handle}
+    Github: github.com/#{person.github.handle}
     TEXT
   else
     <<-TEXT 
