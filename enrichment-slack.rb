@@ -13,7 +13,7 @@ post '/' do
 
   person = Clearbit::Enrichment::Person.find(email: "#{text}")
 
-  if person
+  if person.includes?("@")
     <<-TEXT
     Name: #{person.name.fullName} 😎  
     Location: #{person.location}
@@ -27,7 +27,7 @@ post '/' do
     TEXT
   else
     <<-TEXT 
-    This profile does not exist 🤔
+    Enter an email 🤔
     TEXT
   end
 end
