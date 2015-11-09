@@ -15,7 +15,7 @@ post '/' do
 
   if person
     <<-TEXT
-    Name: #{person.name.fullName}
+    Name: #{person.name.fullName} 😎  
     Location: #{person.location}
     Bio: #{person.bio}
     Company: #{person.employment.name}
@@ -27,7 +27,7 @@ post '/' do
     TEXT
   else
     <<-TEXT 
-    No
+    This profile does not exist 🤔
     TEXT
   end
 end
