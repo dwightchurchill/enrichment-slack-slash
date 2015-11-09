@@ -32,7 +32,7 @@ post '/' do
     else 
 
       <<-TEXT 
-      They have no name! Try another email address!
+      They have no name! 😒 Try another email address! 😁
       TEXT
       
     end 
@@ -40,7 +40,7 @@ post '/' do
   else
 
     <<-TEXT 
-    Enter an email address
+    Enter an email address 🤔
     TEXT
 
   end
