@@ -9,11 +9,11 @@ post '/' do
 
   raise(InvalidTokenError) unless params[:token] == '<SLACK_TOKEN>'
 
-  text = params.fetch('text').strip
+  email = params.fetch("text").strip
 
-  person = Clearbit::Enrichment::Person.find(email: "#{text}")
+  if email.include?("@") 
+    person = Clearbit::Enrichment::Person.find(email: "#{email}")
 
-  if person
     <<-TEXT
     Name: #{person.name.fullName} 😎  
     Location: #{person.location}
@@ -25,5 +25,13 @@ post '/' do
     Twitter: twitter.com/#{person.twitter.handle}
     Github: github.com/#{person.github.handle}
     TEXT
+
+  else
+
+    <<-TEXT 
+    Enter an email address
+    TEXT
+
   end
+
 end
