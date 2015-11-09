@@ -5,11 +5,11 @@ InvalidTokenError = Class.new(Exception)
 
 post '/' do
 
-  raise(InvalidTokenError) unless params[:token] == '2BEFUpP1nHFKvh20EHT8r9Cb'
+  raise(InvalidTokenError) unless params[:token] == '<SLACK_TOKEN>'
 
   text = params.fetch('text').strip
 
-  Clearbit.key = 'd824e501bce714c3d32798606a5a43df'
+  Clearbit.key = '<CLEARBIT_API_KEY>'
 
   person = Clearbit::Enrichment::Person.find(email: "#{text}")
 
